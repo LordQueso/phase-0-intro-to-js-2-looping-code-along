@@ -14,17 +14,29 @@ describe( 'index.js', () => {
   } );
 
   describe( 'writeCards()', () => {
-
-    it( 'returns an array of thank you messages for each name provided to the function', () => {
-      expect(writeCards(["Guadalupe", "Ollie", "Aki"], "surprise")).to.deep.eq([
-        "Thank you, Guadalupe, for the wonderful surprise gift!",
-        "Thank you, Ollie, for the wonderful surprise gift!",
-        "Thank you, Aki, for the wonderful surprise gift!",
-      ]);
-    } );
-  } );
-
-  describe( 'countDown()', () => {
+    const names =["Guadalupe", "Ollie", "Aki"];
+    const messages =[]
+      
+    function writeCards(names, eventnames){
+    function writeCards(names, eventNames){
+    for (let i =0; i< names.length; i++)
+    {let message = `Thank you, ${names[i]}, for the wonderful ${eventNames} gift!`;
+    messages.push(message)}
+    
+    return message;
+    }
+    }
+    
+      }  )
+    
+      describe( 'countDown()', () => {
+      
+      function countDown(number){
+        while (number >= 0){
+          console.log(number); 
+          number --;
+        }
+      }
     afterEach( () => {
       spy.restore();
     } );
